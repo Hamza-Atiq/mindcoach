@@ -1,0 +1,68 @@
+@"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MIT Slogan Hackathon - MindCoach</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container { 
+            background: rgba(255, 255, 255, 0.1); 
+            padding: 40px; 
+            border-radius: 15px; 
+            backdrop-filter: blur(10px);
+        }
+        .api-link { 
+            display: block; 
+            margin: 15px 0; 
+            padding: 15px; 
+            background: rgba(255, 255, 255, 0.2); 
+            text-decoration: none; 
+            border-radius: 10px; 
+            color: white;
+            transition: all 0.3s;
+        }
+        .api-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        h1 { font-size: 2.5em; margin-bottom: 20px; }
+        .status { 
+            background: #4CAF50; 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin: 20px 0; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 MIT Slogan Hackathon</h1>
+        <h2>MindCoach Project</h2>
+        
+        <div class="status">
+            ✅ Backend APIs are live and ready!
+        </div>
+        
+        <p>This is the API backend for the MindCoach mobile application built with Expo/React Native.</p>
+        
+        <h3>Available API Endpoints:</h3>
+        <a href="/api/persona" class="api-link">🎯 /api/persona - Get AI Persona</a>
+        <a href="/api/session" class="api-link">💬 /api/session - Manage Sessions</a>
+        <a href="/api/sessions" class="api-link">📊 /api/sessions - Get All Sessions</a>
+        
+        <p><strong>Mobile App:</strong> The frontend is a React Native/Expo app that connects to these APIs.</p>
+        <p><strong>Development:</strong> Run the mobile app locally using <code>npm start</code> in the app folder.</p>
+    </div>
+</body>
+</html>
+"@ | Out-File -FilePath "index.html" -Encoding UTF8

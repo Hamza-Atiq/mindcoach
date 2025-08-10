@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 
 // Load local sessions bundled with the app
 const localSessions = require('./assets/sessions.json');
-const SERVER_BASE = '<PASTE_YOUR_VERCEL_URL_HERE>/api';
+const SERVER_BASE = 'https://YOUR-ACTUAL-DEPLOYMENT-URL.vercel.app/api';
 
 function HomeScreen({ navigation }) {
   const [sessions, setSessions] = useState([]);

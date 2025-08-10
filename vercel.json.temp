@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "functions": {
+    "api/persona.js": {
+      "runtime": "@vercel/node"
+    },
+    "api/session.js": {
+      "runtime": "@vercel/node"
+    },
+    "api/sessions.js": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/persona",
+      "dest": "/api/persona.js"
+    },
+    {
+      "src": "/api/session",
+      "dest": "/api/session.js"
+    },
+    {
+      "src": "/api/sessions",
+      "dest": "/api/sessions.js"
+    }
+  ]
+}
