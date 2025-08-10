@@ -11,15 +11,36 @@ const Stack = createNativeStackNavigator();
 
 // Load local sessions bundled with the app
 const localSessions = require('./assets/sessions.json');
+const SERVER_BASE = '<PASTE_YOUR_VERCEL_URL_HERE>/api';
 
 function HomeScreen({ navigation }) {
   const [sessions, setSessions] = useState([]);
   const [trend, setTrend] = useState([]);
 
   useEffect(() => {
-    setSessions(localSessions);
-    loadTrend();
+    async function load() {
+      // Try remote first (if SERVER_BASE configured)
+      if (SERVER_BASE && !SERVER_BASE.includes('<PASTE_YOUR')) {
+        try {
+          const r = await fetch(`${SERVER_BASE}/sessions`);
+          if (r.ok) {
+            const remote = await r.json();
+            setSessions(remote);
+            loadTrend();
+            console.log('Loaded sessions from server:', SERVER_BASE);
+            return;
+          }
+        } catch (e) {
+          console.warn('Failed to fetch sessions from server, falling back to local', e);
+        }
+      }
+      // fallback to local
+      setSessions(localSessions);
+      loadTrend();
+    }
+    load();
   }, []);
+
 
   async function loadTrend() {
     try {
