@@ -1,0 +1,8 @@
+{
+  "expo": {
+    "name": "MindCoach",
+    "slug": "mindcoach",
+    "platforms": ["android","ios"],
+    "version": "1.0.0"
+  }
+}
